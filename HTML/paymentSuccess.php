@@ -3,10 +3,6 @@
 session_start();
 
 
-$val_id=urlencode($_POST['val_id']);
-$store_id=urlencode("bayin62755bc25d430");
-$store_passwd=urlencode("bayin62755bc25d430@ssl");
-$requested_url = ("https://sandbox.sslcommerz.com/validator/api/validationserverAPI.php?val_id=".$val_id."&store_id=".$store_id."&store_passwd=".$store_passwd."&v=1&format=json");
 
 
 $result = curl_exec($handle);
