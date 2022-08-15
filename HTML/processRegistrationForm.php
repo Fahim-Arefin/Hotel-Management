@@ -64,6 +64,55 @@
             }
 
                 //after passing empty and valid input check
+            
+                    if($usernameflag && $emailflag && ($password==$confirmpass)){
+
+                        
+                    //establishing connection
+                    include_once "dbconnection.php";
+
+                    
+                    $username = input_filter($_POST['username']);
+                    $email = input_filter($_POST['email']);
+                    $password = input_filter($_POST['password']);
+                    $fullName = input_filter($_POST['fullname']);
+                    $phonenum = input_filter($_POST['number']);
+                    $confirmpass = input_filter($_POST['comfirmPassword']);
+
+
+                    //inserting values into database
+                    $sql = "INSERT INTO customer (customer_name,username,customer_pass,email,phone_number)
+                    VALUES ('$fullName ', '$username', '$password','$email','$phonenum')";
+                    
+                    if ($conn->query($sql) === TRUE) {
+                
+                        //successfull Insert
+                        
+                        
+                        ?>
+                        <!-- php off then write other language then again php on -->
+                        
+                        <!-- going to login page-->
+                    
+                        <script>window.location.assign('regsuccesspage.php')</script>
+
+                        <?php
+                    
+                    } else {
+                    //echo "Error: " . $sql . "<br>" . $conn->error;
+                    echo "<br>Username taken";
+                    }
+
+                    $conn->close();
+                
+                    }else{
+                        if($password!=$confirmpass){
+                            echo "<br>type correct password ";
+                        }
+                        if(!$usernameflag || !$emailflag){
+                            echo "<br>invalid input";
+                        }
+                    }
 
                 
 
