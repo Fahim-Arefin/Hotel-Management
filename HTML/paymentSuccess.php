@@ -144,6 +144,3 @@ $conn->close();
 // echo $roomNumber." ".$price." ".$day." ".$checkinDate." ".$checkoutDate." ".$payment;
 
 ?>
-<!-- <div style="text-align: center;" >
-    <a href="testingdata.php" > <button> GO BACK </button> </a>  
-</div> -->
