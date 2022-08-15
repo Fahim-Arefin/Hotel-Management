@@ -138,9 +138,4 @@ echo "<br>Unsuccessful payment";
 
 $conn->close();
 
-
-
-// echo "<br><br>";
-// echo $roomNumber." ".$price." ".$day." ".$checkinDate." ".$checkoutDate." ".$payment;
-
 ?>
