@@ -64,7 +64,9 @@
             }
 
                 //after passing empty and valid input check
-            
+
+                
+
                     if($usernameflag && $emailflag && ($password==$confirmpass)){
 
                         
@@ -113,8 +115,6 @@
                             echo "<br>invalid input";
                         }
                     }
-
-                
 
             //input filtering function
             function input_filter($data) {

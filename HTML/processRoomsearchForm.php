@@ -119,10 +119,6 @@ $interval = date_diff($datetime1,$datetime2);
                 
                 if($result->num_rows>0){
                     while($rows = $result->fetch_assoc()){
-
-
-
-                      
                         // if(($checkIn < $rows['checkin'] || $checkIn > $rows['checkout']) && ($checkOut < $rows['checkin'] || $checkOut > $rows['checkout']) ){
                           //  if(!($checkIn < $rows['checkin'] && $checkOut < $rows['checkin']) || ($checkIn > $rows['checkout'] && $checkOut > $rows['checkout']) ){  
                             if(!($checkIn >  $rows['checkout'] || $checkOut < $rows['checkin'])){  
@@ -130,10 +126,6 @@ $interval = date_diff($datetime1,$datetime2);
                           }
                     }
         
-
-
-
-
                 }else{
                     echo "No data found";
                 }

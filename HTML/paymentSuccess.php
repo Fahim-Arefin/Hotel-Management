@@ -1,6 +1,8 @@
 <?php
 // Start the session
 session_start();
+
+
 $val_id=urlencode($_POST['val_id']);
 $store_id=urlencode("bayin62755bc25d430");
 $store_passwd=urlencode("bayin62755bc25d430@ssl");
@@ -138,4 +140,12 @@ echo "<br>Unsuccessful payment";
 
 $conn->close();
 
+
+
+// echo "<br><br>";
+// echo $roomNumber." ".$price." ".$day." ".$checkinDate." ".$checkoutDate." ".$payment;
+
 ?>
+<!-- <div style="text-align: center;" >
+    <a href="testingdata.php" > <button> GO BACK </button> </a>  
+</div> -->
