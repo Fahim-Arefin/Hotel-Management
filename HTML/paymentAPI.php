@@ -42,7 +42,7 @@ $post_data['store_passwd'] = "bayin62755bc25d430@ssl";
 $post_data['total_amount'] = $payment;
 $post_data['currency'] = "BDT";
 $post_data['tran_id'] = "SSLCZ_TEST_".uniqid();
-$post_data['success_url'] = "http://www.fahimarefin.com/Hotel-BayINN/HTML/paymentSuccess.php?roomnumber={$roomNumber}&user={$currUser}&checkin={$checkinDate}&checkout={$checkoutDate}&payment={$payment}";
+$post_data['success_url'] = "http://www.fahimarefin.com/BAYIN/HTML/paymentSuccess.php?roomnumber={$roomNumber}&user={$currUser}&checkin={$checkinDate}&checkout={$checkoutDate}&payment={$payment}";
 $post_data['fail_url'] = "http://localhost/new_sslcz_gw/fail.php";
 $post_data['cancel_url'] = "http://localhost/new_sslcz_gw/cancel.php";
 # $post_data['multi_card_name'] = "mastercard,visacard,amexcard";  # DISABLE TO DISPLAY ALL AVAILABLE

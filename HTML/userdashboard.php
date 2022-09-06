@@ -23,13 +23,13 @@
       <label class="logo">Bay In</label>
       <ul>
         <li><a class="active" href="#">overview</a></li>
-        <li><a href="#">FAQ</a></li>
+        <li><a href="FAQ.php">FAQ</a></li>
         <li><a href="roomSearch.php">Rooms</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Feedback</a></li>
-        <li><a href="#">Complain Box</a></li>
-        <li><a href="#">Staff</a></li>
-        <li><a href="#">Admin</a></li>
+        <li><a href="serviceOption.php">Services</a></li>
+        <li><a href="reviewOption.php">Feedback</a></li>
+        <li><a href="complainPage.php">Complain Box</a></li>
+        <li><a href="staffLogInForm.php">Staff</a></li>
+        <li><a href="adminLoginForm.php">Admin</a></li>
         <li><a href="userLogInForm.php">Log in</a></li>
       </ul>
     </nav>

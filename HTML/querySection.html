@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Blaka+Hollow&family=Cormorant+SC:wght@500&family=Open+Sans&family=Raleway&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Blaka+Hollow&family=Cormorant+SC:wght@500&family=Open+Sans&family=Poppins&family=Raleway&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/querySection.css">
+</head>
+
+<body>
+    <h1>Query Section</h1>
+    <section id="cmpsection">
+        <h2>Complain box </h2>
+        <h3>search all complains by username</h3>
+        <label for="username">username : </label>
+        <input placeholder="username" type="text" name="username" id="username">
+        <button>search</button>
+    </section>
+
+    <section id="complainResult">
+        <ul>
+            <!-- <li></li> -->
+        </ul>
+    </section>
+
+    <script type="text/javascript">
+        let name;
+        let btn = document.querySelector('#cmpsection button')
+        btn.addEventListener('click', () => {
+            name = document.querySelector('#username').value;
+            fetch(`http://www.fahimarefin.com/BAYIN/HTML/querySectionAPI.php?name=${name}`)
+                .then(response => response.json())
+                .then(json => {
+                    let ul = document.querySelector('#complainResult ul')
+                    if (json.content.length !== 0) {
+                        // console.dir(json.content)  
+                        for (let obj of json.content) {
+
+                            let li = document.createElement('li')
+                            li.append(obj.complain)
+                            ul.append(li)
+                        }
+                    } else {
+                        let li = document.createElement('li')
+                        li.append('no data found')
+                        ul.append(li)
+                    }
+
+
+                })
+
+        })
+    </script>
+
+    <!-- <hr> -->
+
+    <section id="srvsection">
+        <h2>Service list </h2>
+        <h3>search all service taken by a user</h3>
+        <label for="username02">username : </label>
+        <input placeholder="username" type="text" name="username02" id="username02">
+        <button>search</button>
+    </section>
+
+    <section id="serviceResult">
+        <ul>
+            <!-- <li></li> -->
+        </ul>
+    </section>
+
+    <script type="text/javascript">
+        let name02;
+        let Searchbtn = document.querySelector('#srvsection button')
+        Searchbtn.addEventListener('click', () => {
+            name02 = document.querySelector('#username02').value;
+            fetch(`http://www.fahimarefin.com/BAYIN/HTML/querySectionAPI02.php?name=${name02}`)
+                .then(response => response.json())
+                .then(json => {
+                    // console.dir(json.content)  
+                    let ul = document.querySelector('#serviceResult ul')
+                    if (json.content.length !== 0) {
+                        for (let obj of json.content) {
+
+                            let li = document.createElement('li')
+                            li.append(obj.details)
+                            ul.append(li)
+                        }
+
+                    } else {
+                        let li = document.createElement('li')
+                        li.append('no data found')
+                        ul.append(li)
+                    }
+
+                })
+        })
+    </script>
+
+    <!-- <hr> -->
+
+    <section id="staffInfo">
+        <h2>Staff Info</h2>
+        <h3>search Staff activities</h3>
+        <label for="username03">username : </label>
+        <input placeholder="username" type="text" name="username03" id="username03">
+        <button>search</button>
+    </section>
+
+    <table id="result">
+        <tr id="static">
+            <th>staff name</th>
+            <th>email</th>
+            <th>phone number</th>
+            <th>service given</th>
+            <th>service given to</th>
+        </tr>
+
+    </table>
+
+    <script type="text/javascript">
+        let name03;
+        let SearchButtton = document.querySelector('#staffInfo button')
+        SearchButtton.addEventListener('click', () => {
+            name03 = document.querySelector('#username03').value;
+            fetch(`http://www.fahimarefin.com/BAYIN/HTML/querySectionAPI03.php?name=${name03}`)
+                .then(response => response.json())
+                .then(json => {
+
+
+                    // console.dir(json.content)  
+                    if (json.content.length !== 0) {
+                        for (let obj of json.content) {
+
+                            // console.log(`name = ${obj.id}`)
+                            // console.log(`name = ${obj.username}`)
+                            // console.log(`name = ${obj.diagnostic}`)
+                            let target = document.querySelector('#result')
+                            let tr = document.createElement('tr')
+                            let td1 = document.createElement('th')
+                            let td2 = document.createElement('th')
+                            let td3 = document.createElement('th')
+                            let td4 = document.createElement('th')
+                            let td5 = document.createElement('th')
+
+                            td1.append(obj.staff_name)
+                            td2.append(obj.email)
+                            td3.append(obj.phone_number)
+                            td4.append(obj.details)
+                            td5.append(obj.username)
+
+                            tr.appendChild(td1)
+                            tr.appendChild(td2)
+                            tr.appendChild(td3)
+                            tr.appendChild(td4)
+                            tr.appendChild(td5)
+                            // target.insertAdjacentElement('afterend',tr) 
+                            target.appendChild(tr)
+                        }
+                    } else {
+                        let p = document.createElement('p')
+                        p.append('no data found')
+                        let target = document.querySelector('#result')
+                        target.appendChild(p)
+                    }
+
+                })
+        })
+    </script>
+
+</body>
+
+</html>
