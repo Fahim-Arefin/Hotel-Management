@@ -1,4 +1,27 @@
+<?php
+// Start the session
+session_start();
+?>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../CSS/bootstrap.min2.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="../CSS/style2.css">
+
+    <title>Contact Form #6</title>
+  </head>
+  <body>
   
 
   <div class="content">
