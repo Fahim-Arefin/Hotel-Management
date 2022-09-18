@@ -1,23 +1,3 @@
-<?php
-//echo $interval->format('%a');
-
-//$day=$_POST['checkout'] - $_POST['checkin'];
-//$year= $_POST[''];
-// echo "check in - ".$checkIn."<br>"."check out - ".$checkOut;
-    // if($checkIn > $checkOut){
-    //     echo "check in greater ";
-    // }else if($checkIn < $checkOut){
-    //     echo "check in lower ";
-    // }else{
-    //     echo "check in equal ";
-    // }
-    
-
-    include_once "dbconnection.php";
-    //sql_quary
-    $sql = "SELECT *
-            FROM service";
-    $result = $conn->query($sql);
 
 
 ?>
